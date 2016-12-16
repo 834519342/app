@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RewriteViewController.h
 //  app
 //
 //  Created by 谭杰 on 2016/12/15.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RewriteViewController.h"
 
-@interface ViewController : RewriteViewController
-
+@interface RewriteViewController : UIViewController
 
 @end
-
