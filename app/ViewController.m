@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UITextView *PersonInfo;
+
 @end
 
 @implementation ViewController
@@ -19,8 +21,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"HOME";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.PersonInfo];
+    [self.PersonInfo mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(8);
+        make.left.mas_equalTo(self.view.mas_left).offset(8);
+        make.right.mas_equalTo(self.view.mas_right).offset(-8);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-8);
+    }];
+    self.PersonInfo.font = [UIFont boldSystemFontOfSize:20.f];
+    self.PersonInfo.text = @"asjdkl;fjaskl;fjkl;afkl;jasdkl;fjasd;fkl;asjkl;fjdaskl;fjkl;asfassjfj";
+    
 }
 
+- (UITextView *)PersonInfo
+{
+    if (_PersonInfo == nil) {
+        _PersonInfo = [[UITextView alloc] init];
+    }
+    return _PersonInfo;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
