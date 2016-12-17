@@ -106,8 +106,27 @@
 {
     if (self.timer == nil) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshLessTime) userInfo:nil repeats:YES];
-        //如果不添加下面这条语句，在UITableView拖动的时候，会阻塞定时器的调用
+        /**
+         *  这个时候如果我们在界面上滚动一个UITableView，那么我们会发现在停止滚动前，控制台不会有任何输出，就好像UITableView在滚动
+         *  的时候将timer暂停了一样，在查看相应文档后发现，这其实就是runloop的mode在做怪。runloop可以理解为cocoa下的一种消息循环
+         *  机制，用来处理各种消息事件，我们在开发的时候并不需要手动去创建一个runloop，因为框架为我们创建了一个默认的runloop,通过
+         *  [NSRunloop currentRunloop]我们可以得到一个当前线程下面对应的runloop对象，不过我们需要注意的是不同的runloop之间消息
+         *  的通知方式。
+         *
+         *  接着上面的话题，在开启一个NSTimer实质上是在当前的runloop中注册了一个新的事件源，而当UITableView滚动的时候，当前的
+         *  MainRunLoop是处于UITrackingRunLoopMode的模式下，在这个模式下，是不会处理NSDefaultRunLoopMode的消息(因为
+         *  RunLoop Mode不一样)，要想在scrollView滚动的同时也接受其它runloop的消息，我们需要改变两者之间的runloopmode.
+         *
+         *  NSRunLoopCommonModes
+         *  UITrackingRunLoopMode
+         *  添加下面代码，在UITableView拖动的时候，消息也会刷新
+         */
         [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:UITrackingRunLoopMode];
+        /**
+         *  简单的说就是NSTimer不会开启新的进程，只是在Runloop里注册了一下，Runloop每次loop时都会检测这个timer，看是否可以触发。
+         *  当Runloop在A mode，而timer注册在B mode时就无法去检测这个timer，所以需要把NSTimer也注册到A mode，这样就可以被检测
+         *  到。
+         */
     }
 }
 
