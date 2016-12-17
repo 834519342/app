@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#define item @[@[@"HOME"],@[@"KVC",@"KVO"]]
+#define item @[@[@"HOME"],@[@"KVC",@"KVO",@"倒计时"]]
+
+#import "KvcVC.h"
+#import "KvoVC.h"
+#import "CountDownVC.h"
 
 @interface LeftSlidingMenuVC : UIViewController
 

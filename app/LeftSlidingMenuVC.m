@@ -8,8 +8,6 @@
 
 #import "LeftSlidingMenuVC.h"
 #import "UIViewController+MMDrawerController.h"
-#import "KvcVC.h"
-#import "KvoVC.h"
 
 @interface LeftSlidingMenuVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -19,6 +17,7 @@
 
 @property (nonatomic, strong) KvcVC *kvcVC;
 @property (nonatomic, strong) KvoVC *kvoVC;
+@property (nonatomic, strong) CountDownVC *countDownVC;
 
 @end
 
@@ -160,6 +159,14 @@
         }];
     }
     
+    if (indexPath.section == 1 && indexPath.row == 2) {
+        self.nav = [[UINavigationController alloc] initWithRootViewController:self.countDownVC];
+        self.nav.navigationBar.translucent = NO;
+        [self.mm_drawerController setCenterViewController:self.nav withFullCloseAnimation:YES completion:^(BOOL finished) {
+            NSLog(@"倒计时");
+        }];
+    }
+    
     
 }
 
@@ -177,6 +184,13 @@
         _kvoVC = [[KvoVC alloc] init];
     }
     return _kvoVC;
+}
+- (CountDownVC *)countDownVC
+{
+    if (_countDownVC == nil) {
+        _countDownVC = [[CountDownVC alloc] init];
+    }
+    return _countDownVC;
 }
 
 

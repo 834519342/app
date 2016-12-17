@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE0F5821E04F89D00DA483C /* CountDownVC.m */; };
 		2BF0FED21E024340004BE14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED11E024340004BE14A /* main.m */; };
 		2BF0FED51E024340004BE14A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED41E024340004BE14A /* AppDelegate.m */; };
 		2BF0FED81E024340004BE14A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED71E024340004BE14A /* ViewController.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BE0F5811E04F89D00DA483C /* CountDownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownVC.h; sourceTree = "<group>"; };
+		2BE0F5821E04F89D00DA483C /* CountDownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownVC.m; sourceTree = "<group>"; };
 		2BF0FECD1E024340004BE14A /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF0FED11E024340004BE14A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2BF0FED31E024340004BE14A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -140,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BE0F5801E04F7C300DA483C /* 倒计时 */ = {
+			isa = PBXGroup;
+			children = (
+				2BE0F5811E04F89D00DA483C /* CountDownVC.h */,
+				2BE0F5821E04F89D00DA483C /* CountDownVC.m */,
+			);
+			path = "倒计时";
+			sourceTree = "<group>";
+		};
 		2BF0FEC41E024340004BE14A = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +184,7 @@
 				2BF0FF141E024491004BE14A /* LeftSlidingMenuVC.m */,
 				2BF0FF0C1E0243DE004BE14A /* kvc */,
 				2BF0FF871E029285004BE14A /* kvo */,
+				2BE0F5801E04F7C300DA483C /* 倒计时 */,
 				2BF0FF551E028EE0004BE14A /* 开源框架 */,
 				2BF0FEDC1E024340004BE14A /* Assets.xcassets */,
 				2BF0FF041E0243A4004BE14A /* Base.lproj */,
@@ -451,6 +464,7 @@
 				2BF0FF861E028EE0004BE14A /* UIViewController+MMDrawerController.m in Sources */,
 				2BF0FF7C1E028EE0004BE14A /* MASConstraintMaker.m in Sources */,
 				2BF0FF821E028EE0004BE14A /* View+MASAdditions.m in Sources */,
+				2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */,
 				2BF0FF151E024491004BE14A /* LeftSlidingMenuVC.m in Sources */,
 				2BF0FF7B1E028EE0004BE14A /* MASConstraint.m in Sources */,
 				2BF0FED51E024340004BE14A /* AppDelegate.m in Sources */,
