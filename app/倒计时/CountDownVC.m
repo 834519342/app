@@ -43,6 +43,13 @@
 {
     [super viewWillAppear:animated];
     
+    [self refreshData];
+    
+}
+
+//刷新数据
+- (void)refreshData
+{
     //清空旧数据
     if (self.data.count > 0) {
         [self.data removeAllObjects];
@@ -59,7 +66,18 @@
     }
     //筛选需要倒计时的数据
     [self _operateData];
+}
+
+- (void)showRightMenu:(UIBarButtonItem *)sender
+{
+    [super showRightMenu:sender];
     
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }else if (self.timer == nil){
+        [self startTimer];
+    }
 }
 
 
@@ -105,7 +123,7 @@
 - (void)startTimer
 {
     if (self.timer == nil) {
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(refreshLessTime) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(refreshLessTime) userInfo:nil repeats:YES];
         /**
          *  这个时候如果我们在界面上滚动一个UITableView，那么我们会发现在停止滚动前，控制台不会有任何输出，就好像UITableView在滚动
          *  的时候将timer暂停了一样，在查看相应文档后发现，这其实就是runloop的mode在做怪。runloop可以理解为cocoa下的一种消息循环
@@ -133,11 +151,11 @@
 //刷新对应cell的数据
 - (void)refreshLessTime
 {
-    int time;
+    float time;
     
     for (int i = 0; i < _timeData.count; i++) {
         //获取倒计时
-        time = [[[self.timeData objectAtIndex:i] objectForKey:@"lastTime"] intValue];
+        time = [[[self.timeData objectAtIndex:i] objectForKey:@"lastTime"] floatValue];
         //数据位置
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[[[self.timeData objectAtIndex:i] objectForKey:@"indexPath"] integerValue] inSection:0];
         //cell位置
@@ -146,13 +164,13 @@
         //当倒计时大于0的时候，刷新倒计时显示，反之显示已结束之类的提示
         if (time > 0) {
 
-            cell.textLabel.text = [NSString stringWithFormat:@"%i",time];
-            time = time - 1; //时间 -1
+            cell.textLabel.text = [NSString stringWithFormat:@"%.2f",time];
+            time = time - 0.1; //时间 -1
             
             //将新的时间放到数据源里面
-            NSDictionary *dic = @{@"indexPath":[NSString stringWithFormat:@"%d",i],@"lastTime":[NSString stringWithFormat:@"%i",time]};
+            NSDictionary *dic = @{@"indexPath":[NSString stringWithFormat:@"%d",i],@"lastTime":[NSString stringWithFormat:@"%.2f",time]};
             
-            [self.data replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithInt:time]];
+            [self.data replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:time]];
             [self.timeData replaceObjectAtIndex:i withObject:dic];
             
         } else {

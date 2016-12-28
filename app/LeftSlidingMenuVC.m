@@ -18,6 +18,7 @@
 @property (nonatomic, strong) KvcVC *kvcVC;
 @property (nonatomic, strong) KvoVC *kvoVC;
 @property (nonatomic, strong) CountDownVC *countDownVC;
+@property (nonatomic, strong) SearchVC *searchVC;
 
 @end
 
@@ -131,6 +132,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     if (indexPath.section == 0)
     {
@@ -167,6 +169,13 @@
         }];
     }
     
+    if ([cell.textLabel.text isEqualToString:@"搜索"]) {
+        self.nav = [[UINavigationController alloc] initWithRootViewController:self.searchVC];
+        self.nav.navigationBar.translucent = NO;
+        [self.mm_drawerController setCenterViewController:self.nav withFullCloseAnimation:YES completion:^(BOOL finished) {
+            NSLog(@"搜索");
+        }];
+    }
     
 }
 
@@ -193,6 +202,13 @@
     return _countDownVC;
 }
 
+- (SearchVC *)searchVC
+{
+    if (_searchVC == nil) {
+        _searchVC = [[SearchVC alloc] init];
+    }
+    return _searchVC;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

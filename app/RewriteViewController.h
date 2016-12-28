@@ -10,4 +10,10 @@
 
 @interface RewriteViewController : UIViewController
 
+//左菜单
+- (void)showLeftMenu:(UIBarButtonItem *)sender;
+
+//右菜单
+- (void)showRightMenu:(UIBarButtonItem *)sender;
+
 @end
