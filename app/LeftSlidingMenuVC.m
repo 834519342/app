@@ -171,7 +171,7 @@
     
     if ([cell.textLabel.text isEqualToString:@"搜索"]) {
         self.nav = [[UINavigationController alloc] initWithRootViewController:self.searchVC];
-        self.nav.navigationBar.translucent = NO;
+//        self.nav.navigationBar.translucent = NO;
         [self.mm_drawerController setCenterViewController:self.nav withFullCloseAnimation:YES completion:^(BOOL finished) {
             NSLog(@"搜索");
         }];
