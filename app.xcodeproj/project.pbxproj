@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D71A1E0EA3390086A2FD /* SearchVC.m */; };
 		2B18D7211E0EB5460086A2FD /* Search2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D7201E0EB5460086A2FD /* Search2VC.m */; };
+		2BC145971E23859700E247CC /* AlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC145961E23859700E247CC /* AlertVC.m */; };
 		2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE0F5821E04F89D00DA483C /* CountDownVC.m */; };
+		2BEF08951E20B0400081FA94 /* PhotoAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF08941E20B0400081FA94 /* PhotoAlbumVC.m */; };
+		2BEF08991E20B5B70081FA94 /* TJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF08981E20B5B70081FA94 /* TJAlert.m */; };
 		2BF0FED21E024340004BE14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED11E024340004BE14A /* main.m */; };
 		2BF0FED51E024340004BE14A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED41E024340004BE14A /* AppDelegate.m */; };
 		2BF0FED81E024340004BE14A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED71E024340004BE14A /* ViewController.m */; };
@@ -60,8 +63,15 @@
 		2B18D71A1E0EA3390086A2FD /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		2B18D71F1E0EB5460086A2FD /* Search2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search2VC.h; sourceTree = "<group>"; };
 		2B18D7201E0EB5460086A2FD /* Search2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search2VC.m; sourceTree = "<group>"; };
+		2BC145951E23859700E247CC /* AlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertVC.h; sourceTree = "<group>"; };
+		2BC145961E23859700E247CC /* AlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertVC.m; sourceTree = "<group>"; };
+		2BC145FF1E23A28900E247CC /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		2BE0F5811E04F89D00DA483C /* CountDownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownVC.h; sourceTree = "<group>"; };
 		2BE0F5821E04F89D00DA483C /* CountDownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownVC.m; sourceTree = "<group>"; };
+		2BEF08931E20B0400081FA94 /* PhotoAlbumVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumVC.h; sourceTree = "<group>"; };
+		2BEF08941E20B0400081FA94 /* PhotoAlbumVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumVC.m; sourceTree = "<group>"; };
+		2BEF08971E20B5B70081FA94 /* TJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJAlert.h; sourceTree = "<group>"; };
+		2BEF08981E20B5B70081FA94 /* TJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJAlert.m; sourceTree = "<group>"; };
 		2BF0FECD1E024340004BE14A /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF0FED11E024340004BE14A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2BF0FED31E024340004BE14A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,7 +93,6 @@
 		2BF0FF131E024491004BE14A /* LeftSlidingMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSlidingMenuVC.h; sourceTree = "<group>"; };
 		2BF0FF141E024491004BE14A /* LeftSlidingMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSlidingMenuVC.m; sourceTree = "<group>"; };
 		2BF0FF241E02523C004BE14A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		2BF0FF491E026F7D004BE14A /* define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = define.h; path = kvc/define.h; sourceTree = "<group>"; };
 		2BF0FF4B1E027590004BE14A /* RewriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewriteViewController.h; sourceTree = "<group>"; };
 		2BF0FF4C1E027590004BE14A /* RewriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewriteViewController.m; sourceTree = "<group>"; };
 		2BF0FF521E0285D9004BE14A /* people.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = people.h; sourceTree = "<group>"; };
@@ -163,6 +172,8 @@
 		2B378A081E1CEDAD00E198E6 /* 相册 */ = {
 			isa = PBXGroup;
 			children = (
+				2BEF08931E20B0400081FA94 /* PhotoAlbumVC.h */,
+				2BEF08941E20B0400081FA94 /* PhotoAlbumVC.m */,
 			);
 			path = "相册";
 			sourceTree = "<group>";
@@ -174,6 +185,17 @@
 				2BE0F5821E04F89D00DA483C /* CountDownVC.m */,
 			);
 			path = "倒计时";
+			sourceTree = "<group>";
+		};
+		2BEF08961E20B4A30081FA94 /* 提示框 */ = {
+			isa = PBXGroup;
+			children = (
+				2BC145951E23859700E247CC /* AlertVC.h */,
+				2BC145961E23859700E247CC /* AlertVC.m */,
+				2BEF08971E20B5B70081FA94 /* TJAlert.h */,
+				2BEF08981E20B5B70081FA94 /* TJAlert.m */,
+			);
+			path = "提示框";
 			sourceTree = "<group>";
 		};
 		2BF0FEC41E024340004BE14A = {
@@ -206,6 +228,7 @@
 				2BF0FED71E024340004BE14A /* ViewController.m */,
 				2BF0FF131E024491004BE14A /* LeftSlidingMenuVC.h */,
 				2BF0FF141E024491004BE14A /* LeftSlidingMenuVC.m */,
+				2BEF08961E20B4A30081FA94 /* 提示框 */,
 				2BF0FF0C1E0243DE004BE14A /* kvc */,
 				2BF0FF871E029285004BE14A /* kvo */,
 				2BE0F5801E04F7C300DA483C /* 倒计时 */,
@@ -222,7 +245,7 @@
 		2BF0FED01E024340004BE14A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BF0FF491E026F7D004BE14A /* define.h */,
+				2BC145FF1E23A28900E247CC /* define.h */,
 				2BF0FF241E02523C004BE14A /* PrefixHeader.pch */,
 				2BF0FEE11E024340004BE14A /* Info.plist */,
 				2BF0FED11E024340004BE14A /* main.m */,
@@ -416,6 +439,7 @@
 				TargetAttributes = {
 					2BF0FECC1E024340004BE14A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 53AKWD3AD4;
 						ProvisioningStyle = Automatic;
 					};
 					2BF0FEE51E024340004BE14A = {
@@ -499,12 +523,15 @@
 				2BF0FF7E1E028EE0004BE14A /* MASViewAttribute.m in Sources */,
 				2BF0FF811E028EE0004BE14A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				2BF0FF541E0285D9004BE14A /* people.m in Sources */,
+				2BEF08991E20B5B70081FA94 /* TJAlert.m in Sources */,
+				2BEF08951E20B0400081FA94 /* PhotoAlbumVC.m in Sources */,
 				2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */,
 				2BF0FF7A1E028EE0004BE14A /* MASCompositeConstraint.m in Sources */,
 				2BF0FF7D1E028EE0004BE14A /* MASLayoutConstraint.m in Sources */,
 				2BF0FF4D1E027590004BE14A /* RewriteViewController.m in Sources */,
 				2BF0FED21E024340004BE14A /* main.m in Sources */,
 				2BF0FF851E028EE0004BE14A /* MMDrawerVisualState.m in Sources */,
+				2BC145971E23859700E247CC /* AlertVC.m in Sources */,
 				2BF0FF841E028EE0004BE14A /* MMDrawerController.m in Sources */,
 				2BF0FF121E02442A004BE14A /* KvcVC.m in Sources */,
 				2B18D7211E0EB5460086A2FD /* Search2VC.m in Sources */,
@@ -656,7 +683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 53AKWD3AD4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = app/PrefixHeader.pch;
 				INFOPLIST_FILE = app/Info.plist;
@@ -670,7 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 53AKWD3AD4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = app/PrefixHeader.pch;
 				INFOPLIST_FILE = app/Info.plist;

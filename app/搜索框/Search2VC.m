@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"搜索2";
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
@@ -33,6 +33,7 @@
         make.bottom.mas_equalTo(self.view.mas_bottom);
     }];
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
 }
 

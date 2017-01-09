@@ -19,6 +19,7 @@
 @property (nonatomic, strong) KvoVC *kvoVC;
 @property (nonatomic, strong) CountDownVC *countDownVC;
 @property (nonatomic, strong) SearchVC *searchVC;
+@property (nonatomic, strong) AlertVC *alertVC;
 
 @end
 
@@ -177,6 +178,14 @@
         }];
     }
     
+    if ([cell.textLabel.text isEqualToString:@"提醒框"]) {
+        self.nav = [[UINavigationController alloc] initWithRootViewController:self.alertVC];
+        self.nav.navigationBar.translucent = NO;
+        [self.mm_drawerController setCenterViewController:self.nav withCloseAnimation:YES completion:^(BOOL finished) {
+            NSLog(@"搜索框");
+        }];
+    }
+    
 }
 
 //懒加载
@@ -208,6 +217,14 @@
         _searchVC = [[SearchVC alloc] init];
     }
     return _searchVC;
+}
+
+- (AlertVC *)alertVC
+{
+    if (_alertVC == nil) {
+        _alertVC = [[AlertVC alloc] init];
+    }
+    return _alertVC;
 }
 
 - (void)didReceiveMemoryWarning {
