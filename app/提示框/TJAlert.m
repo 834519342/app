@@ -13,43 +13,57 @@
 @end
 
 @implementation TJAlert
+
 //居中显示
 - (instancetype)initShowCenterWithText:(NSString *)text {
     
     self = [super init];
     if (self) {
         self.text = [text copy];
+        self.duration = DEFAULT_DISPLAY_DURATION;
         
         UIFont *font = [UIFont boldSystemFontOfSize:16.f];
         CGSize textSize = [text boundingRectWithSize:CGSizeMake(280, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil].size;
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 20, textSize.height + 20)];
+        self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 20, textSize.height + 20)];
+        self.contentView.backgroundColor = [UIColor clearColor];
+        self.contentView.layer.shadowOffset = CGSizeMake(0, 0);
+        self.contentView.layer.shadowRadius = 5.f;
+        self.contentView.layer.shadowOpacity = 0.8;
+        self.contentView.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.8].CGColor;
+        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        [self.contentView addTarget:self action:@selector(hideAnimationSetAlpha) forControlEvents:UIControlEventTouchDown];
+        self.contentView.alpha = 0.f;
+        
+        
+        UIView *yuanjiaoView = [[UIView alloc] initWithFrame:self.contentView.bounds];
+        yuanjiaoView.userInteractionEnabled = NO;
+        [self.contentView addSubview:yuanjiaoView];
+        yuanjiaoView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+        yuanjiaoView.layer.cornerRadius = 8.f;
+        yuanjiaoView.layer.masksToBounds = YES;
+        
+        
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:self.contentView.bounds];
+        [self.contentView addSubview:textLabel];
         textLabel.backgroundColor = [UIColor clearColor];
         textLabel.textColor = [UIColor whiteColor];
         textLabel.textAlignment = NSTextAlignmentCenter;
         textLabel.font = font;
         textLabel.text = text;
         textLabel.numberOfLines = 0;
-        
-        self.contentView = [[UIButton alloc] initWithFrame:textLabel.bounds];
-        self.contentView.layer.cornerRadius = 5.f;
-        //打开圆角效果
-        self.contentView.layer.masksToBounds = YES;
-        self.contentView.layer.borderWidth = 1.f;
-        self.contentView.layer.borderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5].CGColor;
-        self.contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-        [self.contentView addSubview:textLabel];
-        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        [self.contentView addTarget:self action:@selector(alertTaped:) forControlEvents:UIControlEventTouchDown];
-        self.contentView.alpha = 0.f;
-        
-        self.duration = DEFAULT_DISPLAY_DURATION;
+
+        //监听屏幕方向改变的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
     }
     
     return self;
 }
 
-
+- (void)deviceOrientationDidChanged:(NSNotification *)aNotification
+{
+    [self hideAnimationSetAlpha];
+}
 
 //居中显示
 + (void)showCenterWithText:(NSString *)text
@@ -83,12 +97,6 @@
     }];
 }
 
-//点击提示框移除对话框
-- (void)alertTaped:(UIButton *)btn
-{
-    [self hideAnimationSetAlpha];
-}
-
 //动画改变透明度，再移除对象
 - (void)hideAnimationSetAlpha
 {
@@ -111,8 +119,43 @@
     self = [super init];
     if (self) {
         self.text = [text copy];
+        self.duration = DEFAULT_DISPLAY_DURATION;
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, ScreenWidth - 40, 44)];
+        self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(10, -54, ScreenWidth - 20, 54)];
+        self.contentView.backgroundColor = [UIColor clearColor];
+        self.contentView.layer.shadowOffset = CGSizeMake(0, 0); //阴影方向
+        self.contentView.layer.shadowRadius = 5.f; //阴影宽度
+        self.contentView.layer.shadowOpacity = 0.8; //阴影强度
+        self.contentView.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.8].CGColor; //阴影颜色
+        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        
+        [self.contentView addTarget:self action:@selector(tapTop:) forControlEvents:UIControlEventTouchDown];
+        
+        
+        UIView *yuanjiaoView = [UIView new];
+        [self.contentView addSubview:yuanjiaoView];
+        [yuanjiaoView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.contentView.mas_top);
+            make.left.mas_equalTo(self.contentView.mas_left);
+            make.right.mas_equalTo(self.contentView.mas_right);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom);
+        }];
+        yuanjiaoView.userInteractionEnabled = NO;
+        yuanjiaoView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+        yuanjiaoView.layer.cornerRadius = 8.f;
+        yuanjiaoView.layer.masksToBounds = YES; //圆角切割
+//        yuanjiaoView.layer.borderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5].CGColor;
+//        yuanjiaoView.layer.borderWidth = 1.f;
+
+        
+        UILabel *textLabel = [UILabel new];
+        [self.contentView addSubview:textLabel];
+        [textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.contentView.mas_top).offset(5);
+            make.left.mas_equalTo(self.contentView.mas_left).offset(10);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-10);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-5);
+        }];
         textLabel.backgroundColor = [UIColor clearColor];
         textLabel.textColor = [UIColor whiteColor];
         textLabel.textAlignment = NSTextAlignmentLeft;
@@ -120,31 +163,24 @@
         textLabel.text = self.text;
         textLabel.numberOfLines = 0;
         
-        self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(10, -54, ScreenWidth - 20, 54)];
-        self.contentView.layer.cornerRadius = 8.f;
-        self.contentView.layer.masksToBounds = YES;
-        self.contentView.layer.borderColor = [[UIColor grayColor] colorWithAlphaComponent:0.5].CGColor;
-        self.contentView.layer.borderWidth = 1.f;
-        self.contentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
-        [self.contentView addSubview:textLabel];
-        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
-        [self.contentView addTarget:self action:@selector(hideTopAnimation) forControlEvents:UIControlEventTouchDown];
-        
     }
     return self;
 }
 
+
 //顶端显示
-+ (void)showTopWithText:(NSString *)text
++ (void)showTopWithText:(NSString *)text withDelegate:(id)delegate
 {
-    [self showTopWithText:text duration:DEFAULT_DISPLAY_DURATION];
+    [self showTopWithText:text duration:DEFAULT_DISPLAY_DURATION withDelegate:delegate];
 }
 
 //顶端显示
-+ (void)showTopWithText:(NSString *)text duration:(CGFloat)duration
++ (void)showTopWithText:(NSString *)text duration:(CGFloat)duration withDelegate:(id)delegate
 {
     TJAlert *tjAlert = [[TJAlert alloc] initShowTopWithText:text];
+    if (delegate) {
+        tjAlert.delegate = delegate;
+    }
     [tjAlert setDuration:duration];
     [tjAlert showTop];
 }
@@ -167,6 +203,18 @@
     }];
 }
 
+//点击手势
+- (void)tapTop:(UIGestureRecognizer *)tap
+{
+    if (tap != nil) {
+        [self hideTopAnimation];
+        if (self.delegate) {
+            [self.delegate ClickTopAlertText:self.text];
+        }
+    }
+}
+
+
 //隐藏动画
 - (void)hideTopAnimation
 {
@@ -177,5 +225,10 @@
     }];
 }
 
+- (void)dealloc
+{
+    //移除监听
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
+}
 
 @end

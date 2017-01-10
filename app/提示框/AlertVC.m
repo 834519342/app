@@ -8,7 +8,7 @@
 
 #import "AlertVC.h"
 
-@interface AlertVC ()
+@interface AlertVC ()<TJAlertDelegate>
 
 @property (nonatomic, strong) UITextField *textField;
 
@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"搜索框";
+    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.textField = [[UITextField alloc] init];
@@ -72,10 +73,15 @@
 - (void)click1:(UIButton *)btn
 {
     if (self.textField.text.length == 0) {
-        [TJAlert showTopWithText:@"默认输出内容"];
+        [TJAlert showTopWithText:@"默认输出内容" withDelegate:self];
     }else {
-        [TJAlert showTopWithText:self.textField.text duration:3.f];
+        [TJAlert showTopWithText:self.textField.text duration:3.f withDelegate:self];
     }
+}
+
+- (void)ClickTopAlertText:(NSString *)text
+{
+    NSLog(@"%@",text);
 }
 
 - (void)didReceiveMemoryWarning {
