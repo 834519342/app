@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1314741E24E76C000A03C9 /* AlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1314731E24E76C000A03C9 /* AlertVC.m */; };
+		2B1314771E24E773000A03C9 /* TJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1314761E24E773000A03C9 /* TJAlert.m */; };
 		2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D71A1E0EA3390086A2FD /* SearchVC.m */; };
 		2B18D7211E0EB5460086A2FD /* Search2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D7201E0EB5460086A2FD /* Search2VC.m */; };
 		2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE0F5821E04F89D00DA483C /* CountDownVC.m */; };
@@ -37,8 +39,6 @@
 		2BF0FF851E028EE0004BE14A /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FF761E028EE0004BE14A /* MMDrawerVisualState.m */; };
 		2BF0FF861E028EE0004BE14A /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FF781E028EE0004BE14A /* UIViewController+MMDrawerController.m */; };
 		2BF0FF8A1E0292A2004BE14A /* KvoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FF891E0292A2004BE14A /* KvoVC.m */; };
-		2BF4DB3D1E248FE200D84262 /* TJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4DB3C1E248FE200D84262 /* TJAlert.m */; };
-		2BF4DB401E248FF200D84262 /* AlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4DB3F1E248FF200D84262 /* AlertVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1314721E24E76C000A03C9 /* AlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertVC.h; sourceTree = "<group>"; };
+		2B1314731E24E76C000A03C9 /* AlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertVC.m; sourceTree = "<group>"; };
+		2B1314751E24E773000A03C9 /* TJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJAlert.h; sourceTree = "<group>"; };
+		2B1314761E24E773000A03C9 /* TJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJAlert.m; sourceTree = "<group>"; };
 		2B18D7191E0EA3390086A2FD /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		2B18D71A1E0EA3390086A2FD /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		2B18D71F1E0EB5460086A2FD /* Search2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search2VC.h; sourceTree = "<group>"; };
@@ -127,10 +131,6 @@
 		2BF0FF781E028EE0004BE14A /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		2BF0FF881E0292A2004BE14A /* KvoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvoVC.h; sourceTree = "<group>"; };
 		2BF0FF891E0292A2004BE14A /* KvoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KvoVC.m; sourceTree = "<group>"; };
-		2BF4DB3B1E248FE200D84262 /* TJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJAlert.h; sourceTree = "<group>"; };
-		2BF4DB3C1E248FE200D84262 /* TJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJAlert.m; sourceTree = "<group>"; };
-		2BF4DB3E1E248FF200D84262 /* AlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertVC.h; sourceTree = "<group>"; };
-		2BF4DB3F1E248FF200D84262 /* AlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,10 +190,10 @@
 		2BEF08961E20B4A30081FA94 /* 提示框 */ = {
 			isa = PBXGroup;
 			children = (
-				2BF4DB3E1E248FF200D84262 /* AlertVC.h */,
-				2BF4DB3F1E248FF200D84262 /* AlertVC.m */,
-				2BF4DB3B1E248FE200D84262 /* TJAlert.h */,
-				2BF4DB3C1E248FE200D84262 /* TJAlert.m */,
+				2B1314721E24E76C000A03C9 /* AlertVC.h */,
+				2B1314731E24E76C000A03C9 /* AlertVC.m */,
+				2B1314751E24E773000A03C9 /* TJAlert.h */,
+				2B1314761E24E773000A03C9 /* TJAlert.m */,
 			);
 			path = "提示框";
 			sourceTree = "<group>";
@@ -509,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF0FF801E028EE0004BE14A /* NSArray+MASAdditions.m in Sources */,
+				2B1314741E24E76C000A03C9 /* AlertVC.m in Sources */,
 				2BF0FF7F1E028EE0004BE14A /* MASViewConstraint.m in Sources */,
 				2BF0FED81E024340004BE14A /* ViewController.m in Sources */,
 				2BF0FF861E028EE0004BE14A /* UIViewController+MMDrawerController.m in Sources */,
@@ -517,7 +518,6 @@
 				2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */,
 				2BF0FF151E024491004BE14A /* LeftSlidingMenuVC.m in Sources */,
 				2BF0FF7B1E028EE0004BE14A /* MASConstraint.m in Sources */,
-				2BF4DB401E248FF200D84262 /* AlertVC.m in Sources */,
 				2BF0FED51E024340004BE14A /* AppDelegate.m in Sources */,
 				2BF0FF8A1E0292A2004BE14A /* KvoVC.m in Sources */,
 				2BF0FF831E028EE0004BE14A /* MMDrawerBarButtonItem.m in Sources */,
@@ -530,8 +530,8 @@
 				2BF0FF7D1E028EE0004BE14A /* MASLayoutConstraint.m in Sources */,
 				2BF0FF4D1E027590004BE14A /* RewriteViewController.m in Sources */,
 				2BF0FED21E024340004BE14A /* main.m in Sources */,
+				2B1314771E24E773000A03C9 /* TJAlert.m in Sources */,
 				2BF0FF851E028EE0004BE14A /* MMDrawerVisualState.m in Sources */,
-				2BF4DB3D1E248FE200D84262 /* TJAlert.m in Sources */,
 				2BF0FF841E028EE0004BE14A /* MMDrawerController.m in Sources */,
 				2BF0FF121E02442A004BE14A /* KvcVC.m in Sources */,
 				2B18D7211E0EB5460086A2FD /* Search2VC.m in Sources */,

@@ -15,15 +15,15 @@
 @implementation TJAlert
 
 //居中显示
-- (instancetype)initShowCenterWithText:(NSString *)text {
+- (instancetype)initShowCenterWithMessage:(NSString *)message {
     
     self = [super init];
     if (self) {
-        self.text = [text copy];
+        self.message = [message copy];
         self.duration = DEFAULT_DISPLAY_DURATION;
         
         UIFont *font = [UIFont boldSystemFontOfSize:16.f];
-        CGSize textSize = [text boundingRectWithSize:CGSizeMake(280, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil].size;
+        CGSize textSize = [message boundingRectWithSize:CGSizeMake(280, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil].size;
         
         self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textSize.width + 20, textSize.height + 20)];
         self.contentView.backgroundColor = [UIColor clearColor];
@@ -50,7 +50,7 @@
         textLabel.textColor = [UIColor whiteColor];
         textLabel.textAlignment = NSTextAlignmentCenter;
         textLabel.font = font;
-        textLabel.text = text;
+        textLabel.text = message;
         textLabel.numberOfLines = 0;
 
         //监听屏幕方向改变的通知
@@ -66,15 +66,15 @@
 }
 
 //居中显示
-+ (void)showCenterWithText:(NSString *)text
++ (void)showCenterWithMessage:(NSString *)message
 {
-    [self showCenterWithText:text duration:DEFAULT_DISPLAY_DURATION];
+    [self showCenterWithMessage:message duration:DEFAULT_DISPLAY_DURATION];
 }
 
 //居中显示
-+ (void)showCenterWithText:(NSString *)text duration:(CGFloat)duration
++ (void)showCenterWithMessage:(NSString *)message duration:(CGFloat)duration
 {
-    TJAlert *alert = [[TJAlert alloc] initShowCenterWithText:text];
+    TJAlert *alert = [[TJAlert alloc] initShowCenterWithMessage:message];
     [alert setDuration:duration];
     [alert showCenter];
 }
@@ -114,11 +114,11 @@
 }
 
 //顶端显示
-- (instancetype)initShowTopWithText:(NSString *)text
+- (instancetype)initShowTopWithMessage:(NSString *)message
 {
     self = [super init];
     if (self) {
-        self.text = [text copy];
+        self.message = [message copy];
         self.duration = DEFAULT_DISPLAY_DURATION;
         
         self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(10, -54, ScreenWidth - 20, 54)];
@@ -160,7 +160,7 @@
         textLabel.textColor = [UIColor whiteColor];
         textLabel.textAlignment = NSTextAlignmentLeft;
         textLabel.font = [UIFont boldSystemFontOfSize:14.f];
-        textLabel.text = self.text;
+        textLabel.text = self.message;
         textLabel.numberOfLines = 0;
         
     }
@@ -168,21 +168,43 @@
 }
 
 
-//顶端显示
-+ (void)showTopWithText:(NSString *)text withDelegate:(id)delegate
+//顶端显示,使用代理回调
++ (void)showTopWithMessage:(NSString *)message withDelegate:(id)delegate
 {
-    [self showTopWithText:text duration:DEFAULT_DISPLAY_DURATION withDelegate:delegate];
+    [self showTopWithMessage:message duration:DEFAULT_DISPLAY_DURATION withDelegate:delegate];
 }
 
-//顶端显示
-+ (void)showTopWithText:(NSString *)text duration:(CGFloat)duration withDelegate:(id)delegate
+//顶端显示，代理回调
++ (void)showTopWithMessage:(NSString *)message duration:(CGFloat)duration withDelegate:(id)delegate
 {
-    TJAlert *tjAlert = [[TJAlert alloc] initShowTopWithText:text];
+    TJAlert *tjAlert = [[TJAlert alloc] initShowTopWithMessage:message];
     if (delegate) {
         tjAlert.delegate = delegate;
     }
     [tjAlert setDuration:duration];
     [tjAlert showTop];
+}
+
+//block回调
++ (void)showTopWithMessage:(NSString *)message clickAlertBlock:(ClickAlertBlock)clickAlertBlock
+{
+    [self showTopWithMessage:message duration:DEFAULT_DISPLAY_DURATION clickAlertBlock:^(NSString *message) {
+        if (clickAlertBlock) {
+            clickAlertBlock(message);
+        }
+    }];
+}
+
++ (void)showTopWithMessage:(NSString *)message duration:(CGFloat)duration clickAlertBlock:(ClickAlertBlock)clickAlertBlock
+{
+    TJAlert *tjAlert = [[TJAlert alloc] initShowTopWithMessage:message];
+    [tjAlert setDuration:duration];
+    [tjAlert showTop];
+    tjAlert.clickAlertBlock = ^(NSString *message) {
+        if (clickAlertBlock) {
+            clickAlertBlock(message);
+        }
+    };
 }
 
 //顶端显示，带动画
@@ -209,7 +231,10 @@
     if (tap != nil) {
         [self hideTopAnimation];
         if (self.delegate) {
-            [self.delegate ClickTopAlertText:self.text];
+            [self.delegate ClickTopAlertText:self.message];
+        }
+        if (self.clickAlertBlock) {
+            self.clickAlertBlock(self.message);
         }
     }
 }

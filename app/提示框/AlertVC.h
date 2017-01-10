@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TJAlert.h"
 
-@interface AlertVC : UIViewController
+#import "RewriteViewController.h"
+
+@interface AlertVC :RewriteViewController
 
 @end

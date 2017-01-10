@@ -1,5 +1,5 @@
 //
-//  TJAlertView.h
+//  TJAlert.h
 //  app
 //
 //  Created by 谭杰 on 2017/1/7.
@@ -16,6 +16,8 @@
 //默认显示时间
 #define DEFAULT_DISPLAY_DURATION 2.f
 
+
+
 @protocol TJAlertDelegate <NSObject>
 
 //点击顶部提示框
@@ -24,13 +26,18 @@
 @end
 
 
+typedef void(^ClickAlertBlock)(NSString *message);
+
 @interface TJAlert : NSObject
 
 //代理回传
 @property (nonatomic, weak) id<TJAlertDelegate> delegate;
 
+//block回调
+@property (nonatomic, copy) ClickAlertBlock clickAlertBlock;
+
 //提示内容
-@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *message;
 
 //容器视图
 @property (nonatomic, strong) UIButton *contentView;
@@ -39,16 +46,42 @@
 @property (nonatomic, assign) CGFloat duration;
 
 
-//居中显示
-+ (void)showCenterWithText:(NSString *)text;
+/** 居中显示提示框
+ * @param message 提示内容
+ */
++ (void)showCenterWithMessage:(NSString *)message;
 
-/** 显示text, 经duration时间后移除 */
-+ (void)showCenterWithText:(NSString *)text duration:(CGFloat)duration;
+/** 居中显示提示框
+ * @param message 提示内容
+ * @param duration 显示时间
+ */
++ (void)showCenterWithMessage:(NSString *)message duration:(CGFloat)duration;
 
 
-//顶端显示
-+ (void)showTopWithText:(NSString *)text withDelegate:(id)delegate;
+/** 顶端显示提示框
+ *  @param message 提示内容
+ *  @param delegate 代理
+ */
++ (void)showTopWithMessage:(NSString *)message withDelegate:(id)delegate;
 
-+ (void)showTopWithText:(NSString *)text duration:(CGFloat)duration withDelegate:(id)delegate;
+/** 顶端显示提示框
+ *  @param message 提示内容
+ *  @param duration 显示时间
+ *  @param delegate 代理
+ */
++ (void)showTopWithMessage:(NSString *)message duration:(CGFloat)duration withDelegate:(id)delegate;
+
+/** 顶端显示提示框
+ *  @param message 提示内容
+ *  @param clickAlertBlock 点击Alert回调
+ */
++ (void)showTopWithMessage:(NSString *)message clickAlertBlock:(ClickAlertBlock)clickAlertBlock;
+
+/** 顶端显示提示框
+ *  @param message 提示内容
+ *  @param duration 显示时间
+ *  @param clickAlertBlock 点击Alert回调
+ */
++ (void)showTopWithMessage:(NSString *)message duration:(CGFloat)duration clickAlertBlock:(ClickAlertBlock)clickAlertBlock;
 
 @end

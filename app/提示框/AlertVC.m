@@ -64,18 +64,24 @@
 - (void)click:(UIButton *)btn
 {
     if (self.textField.text.length == 0) {
-        [TJAlert showCenterWithText:@"默认输出内容"];
+        [TJAlert showCenterWithMessage:@"默认输出内容"];
     }else {
-        [TJAlert showCenterWithText:self.textField.text duration:3.f];
+        [TJAlert showCenterWithMessage:self.textField.text duration:3.f];
     }
 }
 
 - (void)click1:(UIButton *)btn
 {
     if (self.textField.text.length == 0) {
-        [TJAlert showTopWithText:@"默认输出内容" withDelegate:self];
+        [TJAlert showTopWithMessage:@"默认输出内容" withDelegate:self];
+//        [TJAlert showTopWithMessage:@"默认输出内容" clickAlertBlock:^(NSString *message) {
+//            NSLog(@"%@",message);
+//        }];
     }else {
-        [TJAlert showTopWithText:self.textField.text duration:3.f withDelegate:self];
+//        [TJAlert showTopWithMessage:self.textField.text duration:3.f withDelegate:self];
+        [TJAlert showTopWithMessage:self.textField.text duration:3.f clickAlertBlock:^(NSString *message) {
+            NSLog(@"%@",message);
+        }];
     }
 }
 
