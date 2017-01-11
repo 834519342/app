@@ -16,6 +16,8 @@
 
 #ifdef __OBJC__
 
+#import <UserNotifications/UserNotifications.h>
+
 #import "define.h"
 
 #import "MMDrawercontroller.h"

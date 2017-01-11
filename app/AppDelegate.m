@@ -8,10 +8,12 @@
 
 #import "AppDelegate.h"
 
+#import "TJLocalPush.h"
+
 #import "ViewController.h"
 #import "LeftSlidingMenuVC.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong) MMDrawerController *drawerController;
 
@@ -19,10 +21,11 @@
 
 @property (nonatomic, strong) ViewController *homeVC;
 
+
 @end
 
 @implementation AppDelegate
-
+//willFinishLaunchingWithOptions
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions {
     self.leftSlidingMenuVC = [[LeftSlidingMenuVC alloc] init];
     
@@ -56,14 +59,52 @@
     return YES;
 }
 
+//didFinishLaunchingWithOptions
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [TJLocalPush registLocalNotificationWithDelegate:self withCompletionHandler:^(BOOL granted, NSError *error) {
+        
+        NSLog(@"granted:%i error:%@",granted,error);
+        
+        if (granted) {
+            
+            [TJLocalPush PushLocalNotificationTitle:@"abc" Body:@"aabbcc" Sound:nil AlertTime:10 withCompletionHandler:^(NSError *error) {
+                
+                NSLog(@"error:%@",error);
+            }];
+        }
+        
+    }];
+    
     return YES;
 }
+
+#pragma mark - UNUserNotificationCenterDelegate
+//在展示通知前进行处理，即有机会在展示通知前再修改通知内容
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0)
+{
+    //1. 处理通知
+    
+    //2. 处理完成后条用 completionHandler ，用于指示在前台显示通知的形式
+    completionHandler(UNNotificationPresentationOptionBadge |
+                      UNNotificationPresentationOptionSound |
+                      UNNotificationPresentationOptionAlert);
+}
+
+//点击通知回调
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler __IOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __TVOS_PROHIBITED
+{
+    completionHandler(UNNotificationPresentationOptionBadge |
+                      UNNotificationPresentationOptionSound |
+                      UNNotificationPresentationOptionAlert);
+    NSLog(@"点击了通知");
+}
+
+
 
 - (UIViewController *)homeVC
 {
@@ -92,9 +133,11 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
-
+#pragma mark 进入前台后设置消息信息
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    //进入前台取消应用消息图标
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 
