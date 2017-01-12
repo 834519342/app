@@ -20,6 +20,7 @@
 @property (nonatomic, strong) CountDownVC *countDownVC;
 @property (nonatomic, strong) SearchVC *searchVC;
 @property (nonatomic, strong) AlertVC *alertVC;
+@property (nonatomic, strong) PushNotificationVC *puchVC;
 
 @end
 
@@ -186,6 +187,13 @@
         }];
     }
     
+    if ([cell.textLabel.text isEqualToString:@"本地推送"]) {
+        self.nav = [[UINavigationController alloc] initWithRootViewController:self.puchVC];
+        self.nav.navigationBar.translucent = NO;
+        [self.mm_drawerController setCenterViewController:self.nav withFullCloseAnimation:YES completion:^(BOOL finished) {
+            NSLog(@"本地推送");
+        }];
+    }
 }
 
 //懒加载
@@ -225,6 +233,14 @@
         _alertVC = [[AlertVC alloc] init];
     }
     return _alertVC;
+}
+
+- (PushNotificationVC *)puchVC
+{
+    if (_puchVC == nil) {
+        _puchVC = [[PushNotificationVC alloc] init];
+    }
+    return _puchVC;
 }
 
 - (void)didReceiveMemoryWarning {

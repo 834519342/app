@@ -68,23 +68,33 @@
     
     [TJLocalPush registLocalNotificationWithDelegate:self withCompletionHandler:^(BOOL granted, NSError *error) {
         
-        NSLog(@"granted:%i error:%@",granted,error);
-        
-        if (granted) {
-            
-            [TJLocalPush PushLocalNotificationTitle:@"abc" Body:@"aabbcc" Sound:nil AlertTime:10 withCompletionHandler:^(NSError *error) {
-                
-                NSLog(@"error:%@",error);
-            }];
-        }
-        
+        NSLog(@"iOS10:granted:%i error:%@",granted,error);
     }];
+    
+    //    [TJLocalPush registLocalNotificationSuccess:^(BOOL success, NSError *error) {
+    //
+    //        NSLog(@"iOS9:success:%i",success);
+    //    }];
     
     return YES;
 }
 
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    NSLog(@"iOS9Push注册成功");
+}
+
+- (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    NSLog(@"iOS9Push:%@",notification.alertBody);
+    
+    [TJLocalPush removeLocalNotification:notification];
+}
+
+
 #pragma mark - UNUserNotificationCenterDelegate
-//在展示通知前进行处理，即有机会在展示通知前再修改通知内容
+//前台即将显示推送
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0)
 {
     //1. 处理通知
@@ -95,15 +105,14 @@
                       UNNotificationPresentationOptionAlert);
 }
 
-//点击通知回调
+//后台推送点击通知
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler __IOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0) __TVOS_PROHIBITED
 {
     completionHandler(UNNotificationPresentationOptionBadge |
                       UNNotificationPresentationOptionSound |
                       UNNotificationPresentationOptionAlert);
-    NSLog(@"点击了通知");
+    NSLog(@"iOS10及以上版本推送");
 }
-
 
 
 - (UIViewController *)homeVC

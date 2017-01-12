@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-#define item @[@[@"HOME"],@[@"KVC",@"KVO",@"倒计时",@"搜索",@"提醒框"]]
+#define item @[@[@"HOME"],@[@"KVC",@"KVO",@"倒计时",@"搜索",@"提醒框",@"本地推送"]]
 
 #import "KvcVC.h"
 #import "KvoVC.h"
 #import "CountDownVC.h"
 #import "SearchVC.h"
 #import "AlertVC.h"
+#import "PushNotificationVC.h"
 
 @interface LeftSlidingMenuVC : UIViewController
 
