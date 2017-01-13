@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RewriteViewController.h"
 
-@interface PushNotificationVC : UIViewController
+@interface PushNotificationVC : RewriteViewController
 
 @end

@@ -12,8 +12,9 @@
 		2B1314771E24E773000A03C9 /* TJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1314761E24E773000A03C9 /* TJAlert.m */; };
 		2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D71A1E0EA3390086A2FD /* SearchVC.m */; };
 		2B18D7211E0EB5460086A2FD /* Search2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D7201E0EB5460086A2FD /* Search2VC.m */; };
+		2B73CD081E28E24A0020EE57 /* TJLocalPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B73CD051E28E24A0020EE57 /* TJLocalPush.m */; };
+		2B73CD091E28E24A0020EE57 /* TJNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B73CD071E28E24A0020EE57 /* TJNotificationModel.m */; };
 		2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE0F5821E04F89D00DA483C /* CountDownVC.m */; };
-		2BEB36091E27DB5300598786 /* TJLocalPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB36081E27DB5300598786 /* TJLocalPush.m */; };
 		2BEB360F1E27DC2B00598786 /* PushNotificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB360E1E27DC2B00598786 /* PushNotificationVC.m */; };
 		2BEF08951E20B0400081FA94 /* PhotoAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF08941E20B0400081FA94 /* PhotoAlbumVC.m */; };
 		2BF0FED21E024340004BE14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FED11E024340004BE14A /* main.m */; };
@@ -71,11 +72,13 @@
 		2B18D71A1E0EA3390086A2FD /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		2B18D71F1E0EB5460086A2FD /* Search2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search2VC.h; sourceTree = "<group>"; };
 		2B18D7201E0EB5460086A2FD /* Search2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search2VC.m; sourceTree = "<group>"; };
+		2B73CD041E28E24A0020EE57 /* TJLocalPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLocalPush.h; sourceTree = "<group>"; };
+		2B73CD051E28E24A0020EE57 /* TJLocalPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLocalPush.m; sourceTree = "<group>"; };
+		2B73CD061E28E24A0020EE57 /* TJNotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJNotificationModel.h; sourceTree = "<group>"; };
+		2B73CD071E28E24A0020EE57 /* TJNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJNotificationModel.m; sourceTree = "<group>"; };
 		2BC145FF1E23A28900E247CC /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		2BE0F5811E04F89D00DA483C /* CountDownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownVC.h; sourceTree = "<group>"; };
 		2BE0F5821E04F89D00DA483C /* CountDownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownVC.m; sourceTree = "<group>"; };
-		2BEB36071E27DB5300598786 /* TJLocalPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLocalPush.h; sourceTree = "<group>"; };
-		2BEB36081E27DB5300598786 /* TJLocalPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLocalPush.m; sourceTree = "<group>"; };
 		2BEB360D1E27DC2B00598786 /* PushNotificationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotificationVC.h; sourceTree = "<group>"; };
 		2BEB360E1E27DC2B00598786 /* PushNotificationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotificationVC.m; sourceTree = "<group>"; };
 		2BEF08931E20B0400081FA94 /* PhotoAlbumVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbumVC.h; sourceTree = "<group>"; };
@@ -180,7 +183,7 @@
 			children = (
 				2BEB360D1E27DC2B00598786 /* PushNotificationVC.h */,
 				2BEB360E1E27DC2B00598786 /* PushNotificationVC.m */,
-				2BEB36061E27DB5300598786 /* TJLocalPush */,
+				2B73CD031E28E24A0020EE57 /* TJLocalPush */,
 			);
 			path = "本地通知";
 			sourceTree = "<group>";
@@ -205,6 +208,17 @@
 			path = "相册";
 			sourceTree = "<group>";
 		};
+		2B73CD031E28E24A0020EE57 /* TJLocalPush */ = {
+			isa = PBXGroup;
+			children = (
+				2B73CD041E28E24A0020EE57 /* TJLocalPush.h */,
+				2B73CD051E28E24A0020EE57 /* TJLocalPush.m */,
+				2B73CD061E28E24A0020EE57 /* TJNotificationModel.h */,
+				2B73CD071E28E24A0020EE57 /* TJNotificationModel.m */,
+			);
+			path = TJLocalPush;
+			sourceTree = "<group>";
+		};
 		2BE0F5801E04F7C300DA483C /* 倒计时 */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,15 +226,6 @@
 				2BE0F5821E04F89D00DA483C /* CountDownVC.m */,
 			);
 			path = "倒计时";
-			sourceTree = "<group>";
-		};
-		2BEB36061E27DB5300598786 /* TJLocalPush */ = {
-			isa = PBXGroup;
-			children = (
-				2BEB36071E27DB5300598786 /* TJLocalPush.h */,
-				2BEB36081E27DB5300598786 /* TJLocalPush.m */,
-			);
-			path = TJLocalPush;
 			sourceTree = "<group>";
 		};
 		2BEF08961E20B4A30081FA94 /* 提示框 */ = {
@@ -557,11 +562,12 @@
 				2BF0FF151E024491004BE14A /* LeftSlidingMenuVC.m in Sources */,
 				2BF0FF7B1E028EE0004BE14A /* MASConstraint.m in Sources */,
 				2BF0FED51E024340004BE14A /* AppDelegate.m in Sources */,
+				2B73CD081E28E24A0020EE57 /* TJLocalPush.m in Sources */,
 				2BF0FF8A1E0292A2004BE14A /* KvoVC.m in Sources */,
 				2BF0FF831E028EE0004BE14A /* MMDrawerBarButtonItem.m in Sources */,
-				2BEB36091E27DB5300598786 /* TJLocalPush.m in Sources */,
 				2BF0FF7E1E028EE0004BE14A /* MASViewAttribute.m in Sources */,
 				2BF0FF811E028EE0004BE14A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				2B73CD091E28E24A0020EE57 /* TJNotificationModel.m in Sources */,
 				2BF0FF541E0285D9004BE14A /* people.m in Sources */,
 				2BEF08951E20B0400081FA94 /* PhotoAlbumVC.m in Sources */,
 				2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */,
