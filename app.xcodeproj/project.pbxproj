@@ -12,8 +12,12 @@
 		2B1314771E24E773000A03C9 /* TJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1314761E24E773000A03C9 /* TJAlert.m */; };
 		2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D71A1E0EA3390086A2FD /* SearchVC.m */; };
 		2B18D7211E0EB5460086A2FD /* Search2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B18D7201E0EB5460086A2FD /* Search2VC.m */; };
-		2B73CD081E28E24A0020EE57 /* TJLocalPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B73CD051E28E24A0020EE57 /* TJLocalPush.m */; };
-		2B73CD091E28E24A0020EE57 /* TJNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B73CD071E28E24A0020EE57 /* TJNotificationModel.m */; };
+		2BA48CA81E2A79F70013BE81 /* TJLocalPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA48CA51E2A79F70013BE81 /* TJLocalPush.m */; };
+		2BA48CA91E2A79F70013BE81 /* TJNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA48CA71E2A79F70013BE81 /* TJNotificationModel.m */; };
+		2BB966791E2CCC9100A37CE5 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB966761E2CCC9100A37CE5 /* DataModel.m */; };
+		2BB9667A1E2CCC9100A37CE5 /* TJDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB966781E2CCC9100A37CE5 /* TJDB.m */; };
+		2BB9667D1E2CCCC600A37CE5 /* SqlistDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9667C1E2CCCC600A37CE5 /* SqlistDBVC.m */; };
+		2BB9667F1E2CCE4700A37CE5 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB9667E1E2CCE4700A37CE5 /* libsqlite3.0.tbd */; };
 		2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE0F5821E04F89D00DA483C /* CountDownVC.m */; };
 		2BEB360F1E27DC2B00598786 /* PushNotificationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB360E1E27DC2B00598786 /* PushNotificationVC.m */; };
 		2BEF08951E20B0400081FA94 /* PhotoAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEF08941E20B0400081FA94 /* PhotoAlbumVC.m */; };
@@ -62,6 +66,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2BA48CC01E2A7B160013BE81 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2B0C5F4E1E25CBF600604CE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		2B1314721E24E76C000A03C9 /* AlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertVC.h; sourceTree = "<group>"; };
@@ -72,10 +89,18 @@
 		2B18D71A1E0EA3390086A2FD /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		2B18D71F1E0EB5460086A2FD /* Search2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search2VC.h; sourceTree = "<group>"; };
 		2B18D7201E0EB5460086A2FD /* Search2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search2VC.m; sourceTree = "<group>"; };
-		2B73CD041E28E24A0020EE57 /* TJLocalPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLocalPush.h; sourceTree = "<group>"; };
-		2B73CD051E28E24A0020EE57 /* TJLocalPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLocalPush.m; sourceTree = "<group>"; };
-		2B73CD061E28E24A0020EE57 /* TJNotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJNotificationModel.h; sourceTree = "<group>"; };
-		2B73CD071E28E24A0020EE57 /* TJNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJNotificationModel.m; sourceTree = "<group>"; };
+		2BA48CA41E2A79F70013BE81 /* TJLocalPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLocalPush.h; sourceTree = "<group>"; };
+		2BA48CA51E2A79F70013BE81 /* TJLocalPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLocalPush.m; sourceTree = "<group>"; };
+		2BA48CA61E2A79F70013BE81 /* TJNotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJNotificationModel.h; sourceTree = "<group>"; };
+		2BA48CA71E2A79F70013BE81 /* TJNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJNotificationModel.m; sourceTree = "<group>"; };
+		2BA48CB01E2A7B150013BE81 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		2BB966751E2CCC9100A37CE5 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		2BB966761E2CCC9100A37CE5 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		2BB966771E2CCC9100A37CE5 /* TJDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJDB.h; sourceTree = "<group>"; };
+		2BB966781E2CCC9100A37CE5 /* TJDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJDB.m; sourceTree = "<group>"; };
+		2BB9667B1E2CCCC600A37CE5 /* SqlistDBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlistDBVC.h; sourceTree = "<group>"; };
+		2BB9667C1E2CCCC600A37CE5 /* SqlistDBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqlistDBVC.m; sourceTree = "<group>"; };
+		2BB9667E1E2CCE4700A37CE5 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		2BC145FF1E23A28900E247CC /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		2BE0F5811E04F89D00DA483C /* CountDownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownVC.h; sourceTree = "<group>"; };
 		2BE0F5821E04F89D00DA483C /* CountDownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownVC.m; sourceTree = "<group>"; };
@@ -149,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB9667F1E2CCE4700A37CE5 /* libsqlite3.0.tbd in Frameworks */,
 				2B0C5F4F1E25CBF600604CE9 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,7 +199,9 @@
 		2B0C5F4D1E25CBF600604CE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BB9667E1E2CCE4700A37CE5 /* libsqlite3.0.tbd */,
 				2B0C5F4E1E25CBF600604CE9 /* UserNotifications.framework */,
+				2BA48CB01E2A7B150013BE81 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,7 +211,7 @@
 			children = (
 				2BEB360D1E27DC2B00598786 /* PushNotificationVC.h */,
 				2BEB360E1E27DC2B00598786 /* PushNotificationVC.m */,
-				2B73CD031E28E24A0020EE57 /* TJLocalPush */,
+				2BA48CA31E2A79F70013BE81 /* TJLocalPush */,
 			);
 			path = "本地通知";
 			sourceTree = "<group>";
@@ -208,15 +236,36 @@
 			path = "相册";
 			sourceTree = "<group>";
 		};
-		2B73CD031E28E24A0020EE57 /* TJLocalPush */ = {
+		2BA48CA31E2A79F70013BE81 /* TJLocalPush */ = {
 			isa = PBXGroup;
 			children = (
-				2B73CD041E28E24A0020EE57 /* TJLocalPush.h */,
-				2B73CD051E28E24A0020EE57 /* TJLocalPush.m */,
-				2B73CD061E28E24A0020EE57 /* TJNotificationModel.h */,
-				2B73CD071E28E24A0020EE57 /* TJNotificationModel.m */,
+				2BA48CA41E2A79F70013BE81 /* TJLocalPush.h */,
+				2BA48CA51E2A79F70013BE81 /* TJLocalPush.m */,
+				2BA48CA61E2A79F70013BE81 /* TJNotificationModel.h */,
+				2BA48CA71E2A79F70013BE81 /* TJNotificationModel.m */,
 			);
 			path = TJLocalPush;
+			sourceTree = "<group>";
+		};
+		2BB966731E2CCC6E00A37CE5 /* sql数据库应用 */ = {
+			isa = PBXGroup;
+			children = (
+				2BB966741E2CCC9100A37CE5 /* TJDB */,
+				2BB9667B1E2CCCC600A37CE5 /* SqlistDBVC.h */,
+				2BB9667C1E2CCCC600A37CE5 /* SqlistDBVC.m */,
+			);
+			path = "sql数据库应用";
+			sourceTree = "<group>";
+		};
+		2BB966741E2CCC9100A37CE5 /* TJDB */ = {
+			isa = PBXGroup;
+			children = (
+				2BB966751E2CCC9100A37CE5 /* DataModel.h */,
+				2BB966761E2CCC9100A37CE5 /* DataModel.m */,
+				2BB966771E2CCC9100A37CE5 /* TJDB.h */,
+				2BB966781E2CCC9100A37CE5 /* TJDB.m */,
+			);
+			path = TJDB;
 			sourceTree = "<group>";
 		};
 		2BE0F5801E04F7C300DA483C /* 倒计时 */ = {
@@ -276,6 +325,7 @@
 				2BF0FF871E029285004BE14A /* kvo */,
 				2BE0F5801E04F7C300DA483C /* 倒计时 */,
 				2B18D7181E0EA2FC0086A2FD /* 搜索框 */,
+				2BB966731E2CCC6E00A37CE5 /* sql数据库应用 */,
 				2B378A081E1CEDAD00E198E6 /* 相册 */,
 				2BF0FF551E028EE0004BE14A /* 开源框架 */,
 				2BF0FEDC1E024340004BE14A /* Assets.xcassets */,
@@ -425,6 +475,7 @@
 				2BF0FEC91E024340004BE14A /* Sources */,
 				2BF0FECA1E024340004BE14A /* Frameworks */,
 				2BF0FECB1E024340004BE14A /* Resources */,
+				2BA48CC01E2A7B160013BE81 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -556,18 +607,20 @@
 				2BF0FF7F1E028EE0004BE14A /* MASViewConstraint.m in Sources */,
 				2BF0FED81E024340004BE14A /* ViewController.m in Sources */,
 				2BF0FF861E028EE0004BE14A /* UIViewController+MMDrawerController.m in Sources */,
+				2BB9667A1E2CCC9100A37CE5 /* TJDB.m in Sources */,
 				2BF0FF7C1E028EE0004BE14A /* MASConstraintMaker.m in Sources */,
 				2BF0FF821E028EE0004BE14A /* View+MASAdditions.m in Sources */,
 				2BE0F5831E04F89D00DA483C /* CountDownVC.m in Sources */,
 				2BF0FF151E024491004BE14A /* LeftSlidingMenuVC.m in Sources */,
+				2BB966791E2CCC9100A37CE5 /* DataModel.m in Sources */,
 				2BF0FF7B1E028EE0004BE14A /* MASConstraint.m in Sources */,
 				2BF0FED51E024340004BE14A /* AppDelegate.m in Sources */,
-				2B73CD081E28E24A0020EE57 /* TJLocalPush.m in Sources */,
+				2BA48CA81E2A79F70013BE81 /* TJLocalPush.m in Sources */,
 				2BF0FF8A1E0292A2004BE14A /* KvoVC.m in Sources */,
 				2BF0FF831E028EE0004BE14A /* MMDrawerBarButtonItem.m in Sources */,
 				2BF0FF7E1E028EE0004BE14A /* MASViewAttribute.m in Sources */,
 				2BF0FF811E028EE0004BE14A /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				2B73CD091E28E24A0020EE57 /* TJNotificationModel.m in Sources */,
+				2BA48CA91E2A79F70013BE81 /* TJNotificationModel.m in Sources */,
 				2BF0FF541E0285D9004BE14A /* people.m in Sources */,
 				2BEF08951E20B0400081FA94 /* PhotoAlbumVC.m in Sources */,
 				2B18D71B1E0EA3390086A2FD /* SearchVC.m in Sources */,
@@ -575,6 +628,7 @@
 				2BF0FF7D1E028EE0004BE14A /* MASLayoutConstraint.m in Sources */,
 				2BF0FF4D1E027590004BE14A /* RewriteViewController.m in Sources */,
 				2BF0FED21E024340004BE14A /* main.m in Sources */,
+				2BB9667D1E2CCCC600A37CE5 /* SqlistDBVC.m in Sources */,
 				2BEB360F1E27DC2B00598786 /* PushNotificationVC.m in Sources */,
 				2B1314771E24E773000A03C9 /* TJAlert.m in Sources */,
 				2BF0FF851E028EE0004BE14A /* MMDrawerVisualState.m in Sources */,

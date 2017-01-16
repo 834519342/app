@@ -21,6 +21,7 @@
 @property (nonatomic, strong) SearchVC *searchVC;
 @property (nonatomic, strong) AlertVC *alertVC;
 @property (nonatomic, strong) PushNotificationVC *puchVC;
+@property (nonatomic, strong) SqlistDBVC *sqlistVC;
 
 @end
 
@@ -194,6 +195,14 @@
             NSLog(@"本地推送");
         }];
     }
+    
+    if ([cell.textLabel.text isEqualToString:@"sql数据库应用"]) {
+        self.nav = [[UINavigationController alloc] initWithRootViewController:self.sqlistVC];
+        self.nav.navigationBar.translucent = NO;
+        [self.mm_drawerController setCenterViewController:self.nav withCloseAnimation:YES completion:^(BOOL finished) {
+            NSLog(@"sql数据库应用");
+        }];
+    }
 }
 
 //懒加载
@@ -241,6 +250,14 @@
         _puchVC = [[PushNotificationVC alloc] init];
     }
     return _puchVC;
+}
+
+- (SqlistDBVC *)sqlistVC
+{
+    if (_sqlistVC == nil) {
+        _sqlistVC = [[SqlistDBVC alloc] init];
+    }
+    return _sqlistVC;
 }
 
 - (void)didReceiveMemoryWarning {
