@@ -22,6 +22,7 @@
 @property (nonatomic, strong) AlertVC *alertVC;
 @property (nonatomic, strong) PushNotificationVC *puchVC;
 @property (nonatomic, strong) SqlistDBVC *sqlistVC;
+@property (nonatomic, strong) AppleStorePayVC *appleStorePayVC;
 
 @end
 
@@ -137,7 +138,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (indexPath.section == 0)
+    if ([cell.textLabel.text isEqualToString:@"HOME"])
     {
         self.nav = [[UINavigationController alloc] initWithRootViewController:appDelegate.homeVC];
         self.nav.navigationBar.translucent = NO;
@@ -146,7 +147,7 @@
         }];
     }
     
-    if (indexPath.section == 1 && indexPath.row == 0)
+    if ([cell.textLabel.text isEqualToString:@"KVC"])
     {
         self.nav = [[UINavigationController alloc] initWithRootViewController:self.kvcVC];
         self.nav.navigationBar.translucent = NO;
@@ -155,7 +156,7 @@
         }];
     }
     
-    if (indexPath.section == 1 && indexPath.row == 1)
+    if ([cell.textLabel.text isEqualToString:@"KVO"])
     {
         self.nav = [[UINavigationController alloc] initWithRootViewController:self.kvoVC];
         self.nav.navigationBar.translucent = NO;
@@ -164,7 +165,7 @@
         }];
     }
     
-    if (indexPath.section == 1 && indexPath.row == 2) {
+    if ([cell.textLabel.text isEqualToString:@"倒计时"]) {
         self.nav = [[UINavigationController alloc] initWithRootViewController:self.countDownVC];
         self.nav.navigationBar.translucent = NO;
         [self.mm_drawerController setCenterViewController:self.nav withFullCloseAnimation:YES completion:^(BOOL finished) {
@@ -201,6 +202,14 @@
         self.nav.navigationBar.translucent = NO;
         [self.mm_drawerController setCenterViewController:self.nav withCloseAnimation:YES completion:^(BOOL finished) {
             NSLog(@"sql数据库应用");
+        }];
+    }
+    
+    if ([cell.textLabel.text isEqualToString:@"苹果内购"]) {
+        self.nav = [[UINavigationController alloc] initWithRootViewController:self.appleStorePayVC];
+        self.nav.navigationBar.translucent = NO;
+        [self.mm_drawerController setCenterViewController:self.nav withCloseAnimation:YES completion:^(BOOL finished) {
+            NSLog(@"苹果内购");
         }];
     }
 }
@@ -258,6 +267,14 @@
         _sqlistVC = [[SqlistDBVC alloc] init];
     }
     return _sqlistVC;
+}
+
+- (AppleStorePayVC *)appleStorePayVC
+{
+    if (_appleStorePayVC == nil) {
+        _appleStorePayVC = [[AppleStorePayVC alloc] init];
+    }
+    return _appleStorePayVC;
 }
 
 - (void)didReceiveMemoryWarning {

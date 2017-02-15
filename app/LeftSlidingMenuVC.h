@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define item @[@[@"HOME"],@[@"KVC",@"KVO",@"倒计时",@"搜索",@"提醒框",@"本地推送",@"sql数据库应用"]]
+#define item @[@[@"HOME"],@[@"KVC",@"KVO",@"倒计时",@"搜索",@"提醒框",@"本地推送",@"sql数据库应用",@"苹果内购"]]
 
 #import "KvcVC.h"
 #import "KvoVC.h"
@@ -17,6 +17,7 @@
 #import "AlertVC.h"
 #import "PushNotificationVC.h"
 #import "SqlistDBVC.h"
+#import "AppleStorePayVC.h"
 
 @interface LeftSlidingMenuVC : UIViewController
 
