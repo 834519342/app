@@ -49,7 +49,8 @@
 		848E423D1E543113007B9823 /* PhotoAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E422E1E543113007B9823 /* PhotoAlbumVC.m */; };
 		848E42411E543267007B9823 /* AppleStorePayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E42401E543267007B9823 /* AppleStorePayVC.m */; };
 		848E42431E543350007B9823 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848E42421E543350007B9823 /* StoreKit.framework */; };
-		848E424F1E5436A3007B9823 /* OrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E424E1E5436A3007B9823 /* OrderInfo.m */; };
+		848E42A91E5579A8007B9823 /* OrderInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E42A61E5579A8007B9823 /* OrderInfo.m */; };
+		848E42AA1E5579A8007B9823 /* TJAppPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 848E42A81E5579A8007B9823 /* TJAppPay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,8 +174,10 @@
 		848E423F1E543267007B9823 /* AppleStorePayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleStorePayVC.h; sourceTree = "<group>"; };
 		848E42401E543267007B9823 /* AppleStorePayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleStorePayVC.m; sourceTree = "<group>"; };
 		848E42421E543350007B9823 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		848E424D1E5436A3007B9823 /* OrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfo.h; sourceTree = "<group>"; };
-		848E424E1E5436A3007B9823 /* OrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfo.m; sourceTree = "<group>"; };
+		848E42A51E5579A8007B9823 /* OrderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInfo.h; sourceTree = "<group>"; };
+		848E42A61E5579A8007B9823 /* OrderInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInfo.m; sourceTree = "<group>"; };
+		848E42A71E5579A8007B9823 /* TJAppPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJAppPay.h; sourceTree = "<group>"; };
+		848E42A81E5579A8007B9823 /* TJAppPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJAppPay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,20 +482,22 @@
 		848E423E1E54314A007B9823 /* 苹果内购 */ = {
 			isa = PBXGroup;
 			children = (
-				848E424B1E54365F007B9823 /* model */,
+				848E42A41E5579A8007B9823 /* TJAppleStorePay */,
 				848E423F1E543267007B9823 /* AppleStorePayVC.h */,
 				848E42401E543267007B9823 /* AppleStorePayVC.m */,
 			);
 			path = "苹果内购";
 			sourceTree = "<group>";
 		};
-		848E424B1E54365F007B9823 /* model */ = {
+		848E42A41E5579A8007B9823 /* TJAppleStorePay */ = {
 			isa = PBXGroup;
 			children = (
-				848E424D1E5436A3007B9823 /* OrderInfo.h */,
-				848E424E1E5436A3007B9823 /* OrderInfo.m */,
+				848E42A51E5579A8007B9823 /* OrderInfo.h */,
+				848E42A61E5579A8007B9823 /* OrderInfo.m */,
+				848E42A71E5579A8007B9823 /* TJAppPay.h */,
+				848E42A81E5579A8007B9823 /* TJAppPay.m */,
 			);
-			name = model;
+			path = TJAppleStorePay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -634,6 +639,7 @@
 			files = (
 				2BF0FF801E028EE0004BE14A /* NSArray+MASAdditions.m in Sources */,
 				848E42361E543113007B9823 /* AlertVC.m in Sources */,
+				848E42AA1E5579A8007B9823 /* TJAppPay.m in Sources */,
 				2BF0FF7F1E028EE0004BE14A /* MASViewConstraint.m in Sources */,
 				2BF0FED81E024340004BE14A /* ViewController.m in Sources */,
 				848E422F1E543113007B9823 /* KvcVC.m in Sources */,
@@ -666,7 +672,7 @@
 				848E42341E543113007B9823 /* TJDB.m in Sources */,
 				2BF0FF851E028EE0004BE14A /* MMDrawerVisualState.m in Sources */,
 				2BF0FF841E028EE0004BE14A /* MMDrawerController.m in Sources */,
-				848E424F1E5436A3007B9823 /* OrderInfo.m in Sources */,
+				848E42A91E5579A8007B9823 /* OrderInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

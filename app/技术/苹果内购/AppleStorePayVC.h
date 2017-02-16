@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AppleStorePayVC : UIViewController
+#import "RewriteViewController.h"
+@interface AppleStorePayVC : RewriteViewController
 
 @end
