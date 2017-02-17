@@ -243,9 +243,9 @@
 		2BF0FECF1E024340004BE14A /* app */ = {
 			isa = PBXGroup;
 			children = (
+				2BF0FF4A1E0274AF004BE14A /* 重写UIViewController */,
 				2BF0FED31E024340004BE14A /* AppDelegate.h */,
 				2BF0FED41E024340004BE14A /* AppDelegate.m */,
-				2BF0FF4A1E0274AF004BE14A /* 继承类 */,
 				2BF0FED61E024340004BE14A /* ViewController.h */,
 				2BF0FED71E024340004BE14A /* ViewController.m */,
 				2BF0FF131E024491004BE14A /* LeftSlidingMenuVC.h */,
@@ -297,13 +297,13 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
-		2BF0FF4A1E0274AF004BE14A /* 继承类 */ = {
+		2BF0FF4A1E0274AF004BE14A /* 重写UIViewController */ = {
 			isa = PBXGroup;
 			children = (
 				2BF0FF4B1E027590004BE14A /* RewriteViewController.h */,
 				2BF0FF4C1E027590004BE14A /* RewriteViewController.m */,
 			);
-			name = "继承类";
+			name = "重写UIViewController";
 			sourceTree = "<group>";
 		};
 		2BF0FF551E028EE0004BE14A /* 开源框架 */ = {
