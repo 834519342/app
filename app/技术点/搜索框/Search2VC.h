@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseBackVC.h"
 
-@interface Search2VC : UIViewController
+@interface Search2VC : BaseBackVC
 
 @end

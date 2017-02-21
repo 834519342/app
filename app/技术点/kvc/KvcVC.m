@@ -42,7 +42,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"KVC";
-    self.view.backgroundColor = [UIColor whiteColor];
     
     self.people1 = [[people alloc] init];
     
@@ -78,7 +77,6 @@
     }];
     self.label.textAlignment = NSTextAlignmentCenter;
     self.label.text = @"KVC";
-    
     
 }
 	

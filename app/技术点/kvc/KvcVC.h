@@ -1,5 +1,5 @@
 //
-//  KvoVC.h
+//  KvcVC.h
 //  app
 //
 //  Created by 谭杰 on 2016/12/15.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 
-@interface KvoVC : RewriteViewController
+@interface KvcVC : BaseHomeVC
 
 @end

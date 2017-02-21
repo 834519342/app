@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 
-@interface CountDownVC : RewriteViewController
+@interface CountDownVC : BaseHomeVC
 
 @end

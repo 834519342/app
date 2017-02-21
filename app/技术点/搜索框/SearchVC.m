@@ -146,6 +146,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Search2VC *search2VC = [[Search2VC alloc] init];
+    search2VC.backTitle = self.title;
     [self.search setActive:NO];
     [self.navigationController pushViewController:search2VC animated:YES];
 }

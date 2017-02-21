@@ -6,16 +6,16 @@
 //  Copyright © 2016年 谭杰. All rights reserved.
 //
 
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 #import "UIViewController+MMDrawerController.h"
 
-@interface RewriteViewController ()<UIGestureRecognizerDelegate>
+@interface BaseHomeVC ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UINavigationController *nav;
 
 @end
 
-@implementation RewriteViewController
+@implementation BaseHomeVC
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,11 +47,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //左按钮
     UIBarButtonItem *leftBarButItem = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(showLeftMenu:)];
     //设置按钮内容颜色
     [leftBarButItem setTintColor:[UIColor blackColor]];
     self.navigationItem.leftBarButtonItem = leftBarButItem;
     
+    //右按钮
     UIBarButtonItem *rightBarButItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(showRightMenu:)];
     //设置按钮内容颜色
     [rightBarButItem setTintColor:[UIColor blackColor]];
@@ -64,6 +66,8 @@
 //左菜单
 - (void)showLeftMenu:(UIBarButtonItem *)sender
 {
+    [self.view endEditing:YES];
+    
     //打开关闭
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:^(BOOL finished) {
     }];

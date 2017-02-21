@@ -6,8 +6,8 @@
 //  Copyright © 2016年 谭杰. All rights reserved.
 //
 
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 
-@interface SearchVC : RewriteViewController
+@interface SearchVC : BaseHomeVC
 
 @end

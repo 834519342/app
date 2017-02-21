@@ -6,8 +6,8 @@
 //  Copyright © 2017年 谭杰. All rights reserved.
 //
 
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 
-@interface SqlistDBVC : RewriteViewController
+@interface SqlistDBVC : BaseHomeVC
 
 @end

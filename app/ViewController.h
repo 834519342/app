@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 
-@interface ViewController : RewriteViewController
+@interface ViewController : BaseHomeVC
 
 
 @end

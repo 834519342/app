@@ -6,8 +6,8 @@
 //  Copyright © 2017年 谭杰. All rights reserved.
 //
 
-#import "RewriteViewController.h"
+#import "BaseHomeVC.h"
 
-@interface PhotoAlbumVC : RewriteViewController
+@interface PhotoAlbumVC : BaseHomeVC
 
 @end

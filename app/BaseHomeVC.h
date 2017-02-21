@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RewriteViewController : UIViewController
+@interface BaseHomeVC : UIViewController
 
 //左菜单
 - (void)showLeftMenu:(UIBarButtonItem *)sender;

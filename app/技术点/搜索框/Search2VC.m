@@ -49,6 +49,13 @@
     [super viewWillAppear:animated];
 }
 
+- (void)backVC:(UIBarButtonItem *)sender
+{
+    [super backVC:sender];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 5;

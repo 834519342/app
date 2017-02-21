@@ -72,6 +72,7 @@
     [inputBtn setTitle:@"随机赋值" forState:UIControlStateNormal];
     [inputBtn addTarget:self action:@selector(input) forControlEvents:UIControlEventTouchUpInside];
     
+    
     //
     self.label = [[UILabel alloc] init];
     [self.view addSubview:self.label];
