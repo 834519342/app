@@ -26,11 +26,13 @@
     btn.frame = CGRectMake(0, 0, 60, 40);
     [btn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     [btn setTintColor:[UIColor blackColor]];
+    //调整image位置
     [btn setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
     
     [btn setTitle:self.backTitle forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:17.f];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //调整label位置
     [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
     
     [btn addTarget:self action:@selector(backVC:) forControlEvents:UIControlEventTouchUpInside];
@@ -42,10 +44,10 @@
     self.navigationItem.leftBarButtonItem = leftBarButItem;
 }
 
-//左菜单
+//返回按钮
 - (void)backVC:(UIBarButtonItem *)sender
 {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

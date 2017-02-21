@@ -10,9 +10,10 @@
 
 @interface BaseBackVC : UIViewController
 
+//返回按钮文本内容
 @property (nonatomic, strong) NSString *backTitle;
 
-//左菜单
+//返回按钮事件
 - (void)backVC:(UIBarButtonItem *)sender;
 
 @end
