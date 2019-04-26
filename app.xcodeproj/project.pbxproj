@@ -31,6 +31,7 @@
 		2BF0FF841E028EE0004BE14A /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FF741E028EE0004BE14A /* MMDrawerController.m */; };
 		2BF0FF851E028EE0004BE14A /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FF761E028EE0004BE14A /* MMDrawerVisualState.m */; };
 		2BF0FF861E028EE0004BE14A /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF0FF781E028EE0004BE14A /* UIViewController+MMDrawerController.m */; };
+		3020BAFF2271AD2D001070B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3020BAFE2271AD2D001070B2 /* UIKit.framework */; };
 		848E42431E543350007B9823 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848E42421E543350007B9823 /* StoreKit.framework */; };
 		848EC3CA1E5BEEF200AB8B2B /* BaseHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 848EC3C91E5BEEF200AB8B2B /* BaseHomeVC.m */; };
 		848EC3CB1E5BEEF200AB8B2B /* BaseHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 848EC3C91E5BEEF200AB8B2B /* BaseHomeVC.m */; };
@@ -142,6 +143,8 @@
 		2BF0FF761E028EE0004BE14A /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		2BF0FF771E028EE0004BE14A /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		2BF0FF781E028EE0004BE14A /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		3020BAFE2271AD2D001070B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3020BB022271B17D001070B2 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		848E42421E543350007B9823 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		848EC3C81E5BEEF200AB8B2B /* BaseHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHomeVC.h; sourceTree = "<group>"; };
 		848EC3C91E5BEEF200AB8B2B /* BaseHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHomeVC.m; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3020BAFF2271AD2D001070B2 /* UIKit.framework in Frameworks */,
 				848E42431E543350007B9823 /* StoreKit.framework in Frameworks */,
 				2BB9667F1E2CCE4700A37CE5 /* libsqlite3.0.tbd in Frameworks */,
 				2B0C5F4F1E25CBF600604CE9 /* UserNotifications.framework in Frameworks */,
@@ -216,6 +220,7 @@
 		2B0C5F4D1E25CBF600604CE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3020BAFE2271AD2D001070B2 /* UIKit.framework */,
 				848E42421E543350007B9823 /* StoreKit.framework */,
 				2BB9667E1E2CCE4700A37CE5 /* libsqlite3.0.tbd */,
 				2B0C5F4E1E25CBF600604CE9 /* UserNotifications.framework */,
@@ -248,6 +253,7 @@
 		2BF0FECF1E024340004BE14A /* app */ = {
 			isa = PBXGroup;
 			children = (
+				3020BB022271B17D001070B2 /* app.entitlements */,
 				2BF0FF4A1E0274AF004BE14A /* 重写UIViewController */,
 				2BF0FED31E024340004BE14A /* AppDelegate.h */,
 				2BF0FED41E024340004BE14A /* AppDelegate.m */,
@@ -577,6 +583,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 56HZEK78L9;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					2BF0FEE51E024340004BE14A = {
 						CreatedOnToolsVersion = 8.1;
@@ -597,6 +608,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -838,7 +850,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = app/PrefixHeader.pch;
 				INFOPLIST_FILE = app/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tj.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -856,7 +868,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = app/PrefixHeader.pch;
 				INFOPLIST_FILE = app/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tj.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";

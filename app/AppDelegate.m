@@ -13,6 +13,8 @@
 #import "ViewController.h"
 #import "LeftSlidingMenuVC.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong) MMDrawerController *drawerController;
@@ -77,6 +79,11 @@
     //    }];
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"deviceToken=====%@",deviceToken);
 }
 
 
